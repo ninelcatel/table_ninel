@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1685997645 source:c:\users\alexandru\desktop\scoala\info\table_regele\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<ctime>
+
