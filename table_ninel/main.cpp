@@ -2,7 +2,6 @@
 #include <cstring>
 #include <cstdlib>
 #include <ctime>
-// revizuieste pulii in casa, negru se duce in partea opusa din cv motiv,probabil face mutare in loc de scoatere.
 
 using namespace std;
 char a[20][20];
@@ -59,7 +58,6 @@ void zar()
 //
 //
 //
-/////////////////////// COLOANE
 
 void afiseazatabla()
 {
@@ -77,11 +75,11 @@ void afiseazatabla()
 }
 void afisaretablainitiala()
 {
-    int i, j;
-    for (i = 0; i <= 13; i++)
+    int i, j;                 
+    for (i = 0; i <= 13; i++)      
         for (j = 0; j <= 13; j++)
         {
-            if (i == 0  || j == 0 || j == 13 || i==13) a[i][j] = ' #';
+            if (i == 0  || j == 0 || j == 13 || i==13) a[i][j] = ' #';          //pls dont judge my way of creating the gameboard.
             else if (i > 0 && i < 6 && j == 1) a[i][j] = '1';
             else if (i > 0 && i < 3 && j == 12) a[i][j] = '1';
             else if (i > 9 && i < 13 && j == 5) a[i][j] = '1';
@@ -329,13 +327,13 @@ void mutarepiesa_alba(int p,int zarr)
         }
         else if (ngr[13+zarr-p]==1)
         {
-            a[alb[p]][p]=' '; //PROBABIL ARE TREABA CU ACEST LUCRU CE AM SCRIS MAI SUS.
+            a[alb[p]][p]=' '; 
             a[12-alb[13+(zarr-p)]][1+(zarr-p)]='1';
             bar_negru++;
         }
         else
         {
-            a[alb[p]][p]=' '; //PROBABIL ARE TREABA CU ACEST LUCRU CE AM SCRIS MAI SUS.
+            a[alb[p]][p]=' '; 
             a[12-alb[13+(zarr-p)]][1+(zarr-p)]='1';
         }
     }
@@ -451,7 +449,7 @@ void mutarepiesa_alba(int p,int zarr)
         else if(alb[p-zarr]==1)
         {
             a[13-ngr[p]][p-12]=' ';
-            a[12-ngr[p-zarr]][p-zarr-12]='2';
+            a[12-ngr[p-zarr]][p-zarr-12]='2'; // :    ^)
             bar_alb++;
         }
         else
@@ -492,7 +490,7 @@ void mutarepiesa_alba(int p,int zarr)
 //
 //
 //
-
+// thinking about what formulas i needed to use was a PAIN.
 int main()
 {
     cout << "Bine ai venit la Table!" << endl;
@@ -523,7 +521,7 @@ int main()
             cout << j1 << " a dat " << zar1<<endl;
             cout << j2 << " a dat " << zar2<<endl;
             if (zar1 == zar2)
-                cout << " Egalitate, se va da din nou cu zarul ";
+                cout << " Egalitate, se va da din nou cu zarul ";     // they are never equal i thought they would be but was too lazy to find a way to make them random and possibly equal
         }
         while (zar1 == zar2);
         if (zar1 > zar2)cout << j1 << " joaca primu ";
@@ -927,7 +925,7 @@ int main()
                             afiseazatabla();
                             tura++;
                         }
-                        //ulterior voi face daca nu am ales 1 sau 2
+                        
                     }
 
                 }
@@ -941,3 +939,4 @@ int main()
         system("Color 07");
     }
 }
+//thanks for checking this out ,this was both fun and hard since i dont know c++ and more c :     ^) , but more fun  
