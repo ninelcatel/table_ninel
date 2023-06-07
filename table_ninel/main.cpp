@@ -215,6 +215,15 @@ void scoaterepiesa_alba(int p,int zarr)
         scoaterepiesa_alba(p,zarr);
         return;
     }
+      else if(zarr>25-p && alb[25-zarr]!=0) //added new rulez
+    {
+        cout<<"Mutare invalida,alege alta coloana"<<endl;
+
+        cin>>p;
+        x++;
+        scoaterepiesa_alba(p,zarr);
+        return;
+    }
     if(p+zarr>=25)  a[13-alb[p]][p-12]=' ';
 
     else if(p>12) //muta din stanga in dr partea jos
@@ -263,6 +272,15 @@ void scoaterepiesa_neagra(int p, int zarr)
         scoaterepiesa_neagra(p,zarr);
         return;
     }
+      else if(zar>13-p && ngr[13-zarr]!=0)   // added new rule
+    {
+         cout<<"Mutare invalida,alege alta coloana"<<endl;
+
+        cin>>p;
+        y++;
+        scoaterepiesa_neagra(p,zarr);
+        return;
+    }
     if(zarr+p>=13)
     {
         a[ngr[p]][p]=' ';
@@ -305,6 +323,16 @@ void mutarepiesa_alba(int p,int zarr)
     numarare_piese_albe();
     if(alb[p]==0)
     {
+        cout<<"Mutare invalida,alege alta coloana"<<endl;
+
+        cin>>p;
+        x++;
+        mutarepiesa_alba(p,zarr);
+        return;
+    }
+     else if (zarr+p>24) //added this rule
+    {
+
         cout<<"Mutare invalida,alege alta coloana"<<endl;
 
         cin>>p;
@@ -400,6 +428,15 @@ void mutarepiesa_alba(int p,int zarr)
     }
     numarare_piese_negre();
     if(ngr[p]==0)
+    {
+        cout<<"Mutare invalida,alege alta coloana"<<endl;
+
+        cin>>p;
+        y++;
+        mutarepiesa_neagra(p,zarr);
+        return;
+    }
+      else if(p<13 && p>6 && p+zarr>=13)     //added this rule
     {
         cout<<"Mutare invalida,alege alta coloana"<<endl;
 
